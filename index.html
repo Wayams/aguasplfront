@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Agua</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar solo para login -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="main-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#dashboard"><i class="bi bi-droplet-fill"></i> Sistema de Agua</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu">
+                        <li class="nav-item"><a class="nav-link" href="#login" id="nav-login">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Layout con sidebar para páginas autenticadas -->
+        <div id="app-layout" class="d-none">
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="bi bi-droplet-fill"></i> Sistema de Agua</h5>
+                        <button class="btn btn-sm btn-link text-white d-md-none" id="sidebarToggle" onclick="Sidebar.toggleMobile()">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <!-- Se llenará dinámicamente -->
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="dropdown">
+                        <a href="#" class="sidebar-user" id="user-dropdown" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                            <span id="user-name">Usuario</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" onclick="Router.logout()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <div class="sidebar-overlay d-md-none" onclick="Sidebar.toggleMobile()"></div>
+            <main class="main-content" id="main-content">
+                <button class="btn btn-primary d-md-none mb-3" id="mobileMenuToggle" onclick="Sidebar.toggleMobile()">
+                    <i class="bi bi-list"></i> Menú
+                </button>
+                <div id="loading" class="text-center d-none">
+                    <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+                </div>
+                <div id="page-content"></div>
+            </main>
+        </div>
+        
+        <!-- Contenedor para páginas sin sidebar (login) -->
+        <main class="container-fluid py-4" id="login-content">
+            <div id="loading-login" class="text-center d-none">
+                <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+            </div>
+            <div id="page-content-login"></div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="js/env-config.js"></script>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
+
