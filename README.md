@@ -71,7 +71,7 @@ El script `scripts/generate-env-config.js` se ejecutará automáticamente antes 
 
 ## Configuración
 
-Por defecto, la aplicación se conecta a `https://aguaspl.site/`.
+Por defecto, la aplicación se conecta a `https://backend.aguaspl.site`.
 
 Para cambiar la URL del backend:
 
@@ -120,7 +120,7 @@ El código está organizado en módulos:
 
 ## Requisitos
 
-- Backend ejecutándose en `https://aguaspl.site/` (o configurado)
+- Backend ejecutándose en `https://backend.aguaspl.site` (o configurado)
 - Navegador moderno con soporte para ES6 modules
 - Servidor web simple (para evitar problemas de CORS)
 
