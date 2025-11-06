@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Obtener API_BASE_URL de las variables de entorno
-const API_BASE_URL = process.env.API_BASE_URL || 'http://127.0.0.1:8000';
+const API_BASE_URL = process.env.API_BASE_URL || 'https://aguaspl-production.up.railway.app';
 
 // Contenido del archivo env-config.js
 const configContent = `// Configuración generada automáticamente desde variables de entorno
